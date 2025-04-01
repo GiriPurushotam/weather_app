@@ -1,0 +1,13 @@
+{
+    "name": "dell/weather_app",
+    "description": "Live Weather App using OOP php",
+    "authors": [
+        {
+            "name": "GiriPurushotam",
+            "email": "giripurushotam39@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
