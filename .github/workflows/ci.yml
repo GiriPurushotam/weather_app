@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      OPEN_WEATHER_API_KEY: ${{  secrets.OPEN_WEATHER_API_KEY }}
 
     steps:
       - name: Checkout repository
@@ -22,6 +24,13 @@ jobs:
       - name: Install dependencies
         run: composer install
 
+      - name: Create .env file
+        run: |
+          echo "OPEN_WEATHER_API_KEY=${{ secrets.OPEN_WEATHER_API_KEY }}" > .env
+
       - name: Run PHP lint
         run: |
           find . -type f -name "*.php" -not -path "./vendor/*" -exec php -l {} \;
+
+          - name: run tests
+          run: php tests/weatherTest.php
