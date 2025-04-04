@@ -28,7 +28,7 @@ jobs:
 
       - name: Run PHP lint
         run: |
-          find . -type f -name "*.php" -not -path "./vendor/*" | xargs -I {} php -l {}  # Fixed pipe here
+          find . -type f -name "*.php" -not -path "./vendor/*" -exec php -l {} \;
 
       - name: Run tests
         run: php tests/weatherTest.php
