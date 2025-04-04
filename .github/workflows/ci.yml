@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      OPEN_WEATHER_API_KEY: ${{  secrets.OPEN_WEATHER_API_KEY }}
 
     steps:
       - name: Checkout repository
@@ -30,7 +28,7 @@ jobs:
 
       - name: Run PHP lint
         run: |
-          find . -type f -name "*.php" -not -path "./vendor/*" xargs -I {} php -l {} \;
+          find . -type f -name "*.php" -not -path "./vendor/*" | xargs -I {} php -l {} \;
 
-          - name: run tests
-          run: php tests/weatherTest.php
+      - name: run tests
+        run: php tests/weatherTest.php
