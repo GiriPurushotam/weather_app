@@ -31,4 +31,4 @@ jobs:
           find . -type f -name "*.php" -not -path "./vendor/*" -exec php -l {} \;
 
       - name: Run tests
-        run: php tests/weatherTest.php
+        run: php tests/WeatherTest.php
