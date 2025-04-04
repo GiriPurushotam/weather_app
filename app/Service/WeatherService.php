@@ -37,7 +37,7 @@ class WeatherService
             'temp' => $data['main']['temp'],
             'description' => $data['weather'][0]['description'],
             'humidity'   => $data['main']['humidity'],
-            'wind_speed' => $data['wind']['speed'] . 'm.s'
+            'wind_speed' => $data['wind']['speed'] . ' miles.second'
         ];
     }
 }
