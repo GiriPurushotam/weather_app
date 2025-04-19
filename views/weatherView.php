@@ -4,31 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Report</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f2f2;
-            padding: 2rem;
-        }
-
-        .weather-container {
-            background: #fff;
-            border-radius: 8px;
-            padding: 2rem;
-            max-width: 400px;
-            margin: auto;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            margin-top: 0;
-            text-align: center;
-        }
-
-        .weather-data p {
-            margin: 0.5rem 0;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
