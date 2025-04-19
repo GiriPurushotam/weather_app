@@ -15,13 +15,19 @@ class WeatherController
         $this->weatherService = new WeatherService();
     }
 
-    public function getWeather($city)
+    public function getWeather(): string
     {
+        $city = $_GET['city'] ?? 'Kathmandu'; // Default City
         $weatherData = $this->weatherService->getWeather($city);
-        if ($weatherData) {
-            return json_encode($weatherData);
-        } else {
-            return json_encode(['error' => 'City not found or API error']);
-        }
+
+        return $this->render('weatherView.php', ['weatherData' => $weatherData]);
+    }
+
+    public function render(string $view, array $data = []): string
+    {
+        extract($data);
+        ob_start();
+        require __DIR__ . '/../../views/' . $view;
+        return ob_get_clean();
     }
 }
