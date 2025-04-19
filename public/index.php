@@ -8,8 +8,5 @@ use App\Controller\WeatherController;
 
 $controller = new WeatherController();
 
-if (isset($_GET['city'])) {
-    echo $controller->getWeather($_GET['city']);
-} else {
-    echo  json_encode(['error' => 'City parameter is required']);
-}
+$city = $_GET['city'] ?? 'Kathmandu';
+echo json_encode($controller->getWeather($city));
