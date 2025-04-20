@@ -9,6 +9,10 @@
 
 <body>
 
+    <form action="/" method="GET">
+        <input type="text" name="city" placeholder="Enter City" value="<?= isset($_GET['city']) ? htmlspecialchars($_GET['city']) : '' ?>" required>
+    </form>
+
     <div class="weather-container">
         <h2>Weather in <?= htmlspecialchars($weatherData['city']) ?></h2>
 

@@ -20,6 +20,10 @@ class WeatherController
         $city = $_GET['city'] ?? 'Kathmandu'; // Default City
         $weatherData = $this->weatherService->getWeather($city);
 
+        if (isset($weatherData['cod']) && $weatherData['cod'] !== 200) {
+            return $this->render('weatherView.php', ['error' => 'Weather data not found for ' . htmlspecialchars($city)]);
+        }
+
         return $this->render('weatherView.php', ['weatherData' => $weatherData]);
     }
 
