@@ -11,6 +11,8 @@
 
     <form action="/" method="GET">
         <input type="text" name="city" placeholder="Enter City" value="<?= isset($_GET['city']) ? htmlspecialchars($_GET['city']) : '' ?>" required>
+        <button type="submit">Get Weather</button>
+
     </form>
 
     <div class="weather-container">
