@@ -8,9 +8,11 @@ use App\Controller\WeatherController;
 use App\Router;
 
 $router = new Router();
-$router->addRoute('GET', '/weather_app/public/', 'App\Controller\WeatherController@getWeather');
+$router->addRoute('GET', '/', 'App\Controller\WeatherController@getWeather');
 
 $route = $router->match(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+error_log('Request URI: ' . $_SERVER['REQUEST_URI']);
+
 
 if ($route) {
     [$controllerName, $action] = explode('@', $route);
