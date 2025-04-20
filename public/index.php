@@ -18,5 +18,5 @@ if ($route) {
     echo $controller->$action();
 } else {
     http_response_code(404);
-    echo "404 - Page not found";
+    echo "404 - Page not founds";
 }
